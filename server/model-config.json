@@ -26,11 +26,11 @@
     "dataSource": "db",
     "public": false
   },
-  "mp": {
+  "score": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
-  "job": {
+  "mp": {
     "dataSource": "db",
     "public": true
   }

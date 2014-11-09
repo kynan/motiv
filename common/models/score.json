@@ -1,6 +1,6 @@
 {
-  "name": "job",
-  "plural": "jobs",
+  "name": "score",
+  "plural": "scores",
   "base": "PersistedModel",
   "properties": {
     "mmsId": {
