@@ -1,0 +1,10 @@
+{
+  "name": "job",
+  "plural": "jobs",
+  "base": "score",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
