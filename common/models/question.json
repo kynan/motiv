@@ -1,0 +1,10 @@
+{
+  "name": "question",
+  "plural": "questions",
+  "base": "score",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
