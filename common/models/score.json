@@ -2,9 +2,11 @@
   "name": "score",
   "plural": "scores",
   "base": "PersistedModel",
+  "idInjection": false,
   "properties": {
     "mmsId": {
       "type": "number",
+      "id": true,
       "required": true
     },
     "agriculture": {
