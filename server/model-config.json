@@ -25,5 +25,9 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "mp": {
+    "dataSource": "db",
+    "public": true
   }
 }

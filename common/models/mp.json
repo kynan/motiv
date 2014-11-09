@@ -1,0 +1,47 @@
+{
+  "name": "mp",
+  "plural": "mps",
+  "base": "PersistedModel",
+  "properties": {
+    "mmsId": {
+      "type": "number",
+      "required": true
+    },
+    "peopleId": {
+      "type": "number",
+      "required": true
+    },
+    "constituency": {
+      "type": "string",
+      "required": true
+    },
+    "age": {
+      "type": "number",
+      "required": true
+    },
+    "gender": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string"
+    },
+    "dept": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "party": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
