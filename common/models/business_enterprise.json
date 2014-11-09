@@ -1,0 +1,10 @@
+{
+  "name": "business_enterprise",
+  "plural": "businesses_enterprise",
+  "base": "score",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

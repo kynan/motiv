@@ -34,6 +34,10 @@
     "dataSource": "db",
     "public": true
   },
+  "business_enterprise": {
+    "dataSource": "db",
+    "public": true
+  },
   "job": {
     "dataSource": "db",
     "public": true
