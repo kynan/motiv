@@ -42,6 +42,10 @@
     "dataSource": "mongoDB",
     "public": true
   },
+  "interest": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
   "job": {
     "dataSource": "mongoDB",
     "public": true

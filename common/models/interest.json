@@ -1,0 +1,10 @@
+{
+  "name": "interest",
+  "plural": "interests",
+  "base": "score",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
