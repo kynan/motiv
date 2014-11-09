@@ -62,7 +62,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "mp": {
+      "type": "belongsTo",
+      "model": "mp",
+      "foreignKey": "mmsId"
+    }
+  },
   "acls": [],
   "methods": []
 }
