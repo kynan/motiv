@@ -31,23 +31,23 @@
     "public": false
   },
   "mp": {
-    "dataSource": "db",
+    "dataSource": "mongoDB",
     "public": true
   },
   "business_enterprise": {
-    "dataSource": "db",
+    "dataSource": "mongoDB",
     "public": true
   },
   "business_local": {
-    "dataSource": "db",
+    "dataSource": "mongoDB",
     "public": true
   },
   "job": {
-    "dataSource": "db",
+    "dataSource": "mongoDB",
     "public": true
   },
   "question": {
-    "dataSource": "db",
+    "dataSource": "mongoDB",
     "public": true
   }
 }
