@@ -1,0 +1,10 @@
+{
+  "name": "business_local",
+  "plural": "businesses_local",
+  "base": "score",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
