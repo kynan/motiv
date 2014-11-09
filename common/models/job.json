@@ -1,0 +1,66 @@
+{
+  "name": "job",
+  "plural": "jobs",
+  "base": "PersistedModel",
+  "properties": {
+    "mmsId": {
+      "type": "number",
+      "required": true
+    },
+    "agriculture": {
+      "type": "number"
+    },
+    "production": {
+      "type": "number"
+    },
+    "construction": {
+      "type": "number"
+    },
+    "carsales": {
+      "type": "number"
+    },
+    "wholesale": {
+      "type": "number"
+    },
+    "retail": {
+      "type": "number"
+    },
+    "transport": {
+      "type": "number"
+    },
+    "hospitality": {
+      "type": "number"
+    },
+    "comms": {
+      "type": "number"
+    },
+    "finance": {
+      "type": "number"
+    },
+    "property": {
+      "type": "number"
+    },
+    "science": {
+      "type": "number"
+    },
+    "business": {
+      "type": "number"
+    },
+    "defense": {
+      "type": "number"
+    },
+    "education": {
+      "type": "number"
+    },
+    "health": {
+      "type": "number"
+    },
+    "entertainment": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
