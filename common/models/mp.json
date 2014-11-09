@@ -41,6 +41,12 @@
     },
     "party": {
       "type": "string"
+    },
+    "interests": {
+      "type": "string"
+    },
+    "register": {
+      "type": "string"
     }
   },
   "validations": [],
