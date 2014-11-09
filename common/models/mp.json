@@ -2,13 +2,16 @@
   "name": "mp",
   "plural": "mps",
   "base": "PersistedModel",
+  "idInjection": false,
   "properties": {
     "mmsId": {
       "type": "number",
+      "id": true,
       "required": true
     },
     "peopleId": {
       "type": "number",
+      "id": true,
       "required": true
     },
     "constituency": {
