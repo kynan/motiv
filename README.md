@@ -1,11 +1,11 @@
 # Motiv
 
-Compares select committees based on their members motives.
+[Compares select committees based on their members motives](http://www.zakcutner.uk/motiv/)
 
 Built for [Accountability Hack 2014] by [Florian Rathgeber], [James Withers],
 [Zak Cutner], [Aleksi Knuutila] ([hacks page]).
 
-![Compares select committees based on their members motives](http://s3.amazonaws.com/rs-hacks/images/572/project/motiv.jpg)
+[![Compares select committees based on their members motives](http://s3.amazonaws.com/rs-hacks/images/572/project/motiv.jpg)](http://www.zakcutner.uk/motiv/)
 
 ## API
 
