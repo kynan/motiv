@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Motiv</title>
+        <link rel="stylesheet" type="text/css" href="jqcloud.css">
+        <link rel="stylesheet" type="text/css" href="dropdown.css">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #fafafa;
+                font-family: "Aleo", sans-serif;
+                font-weight: lighter;
+            }
+
+            #header {
+                height: 100px;
+                background-color: #77c5d4;
+                box-shadow: 0px 0px 5px 3px #aaa;
+            }
+
+            #header h1 {
+                position: relative;
+                float: left;
+                margin: 0;
+                color: #fff;
+                font-size: 30px;
+                height: calc(100% - 30px);
+                padding-top: 30px;
+                width: 15%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            
+            #header h1:hover {
+                background-color: rgba(0, 0, 0, 0.55);
+            }
+            
+            .cloud {
+                display: inline-block;
+                width: 49%;
+                height: 500px;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <script type="text/javascript" src="velocity.min.js"></script>
+        <script type="text/javascript" src="committtees.js"></script>
+        <script type="text/javascript" src="jqcloud.js"></script>
+        <script type="text/javascript">
+            var committees;
+            
+            function findWithAttr(array, attr, value) {
+                for(var i = 0; i < array.length; i += 1) {
+                    if(array[i][attr] === value) {
+                        return i;
+                    }
+                }
+            }
+            
+            function changeData(element, color, committeeId) {
+                var index = findWithAttr(committees, 'id', parseInt(committeeId));
+                var committee = committees[index].members.join(',');
+                
+                $.getJSON('http://192.168.125.69/test.php?use_average=1', {'mms_ids': committee}, function(data) {
+                    console.log(JSON.stringify(data));
+                    var word_array = [
+                        {text: "Agriculture", weight: data.agriculture},
+                        {text: "Production", weight: data.production},
+                        {text: "Construction", weight: data.construction},
+                        {text: "Motor sales", weight: data.carsales},
+                        {text: "Wholesale", weight: data.wholesale},
+                        {text: "Retail", weight: data.retail},
+                        {text: "Transport", weight: data.transport},
+                        {text: "Hospitality", weight: data.hospitality},
+                        {text: "Communications", weight: data.comms},
+                        {text: "Finance", weight: data.finance},
+                        {text: "Property", weight: data.property},
+                        {text: "Science", weight: data.science},
+                        {text: "Business", weight: data.business},
+                        {text: "Defence", weight: data.defense},
+                        {text: "Education", weight: data.education},
+                        {text: "Health", weight: data.health},
+                        {text: "Entertainment", weight: data.entertainment},
+                    ];
+                       
+                    $(element).velocity({opacity: 0}, 300, function() {
+                        $(this).unbind().empty().jQCloud(word_array, {color: color}).velocity({opacity: 1}, 300);
+                    });
+                });
+            }
+            
+            $(document).ready(function() {
+                committees = JSON.parse(committeesData);
+                changeData($('#rebels'), '#538994', 2);
+                changeData($('#normal'), '#5e9ca8', 2);
+            });
+                        
+            function rebelChange(e) {
+                changeData($('#rebels'), '#538994', e.value);
+            }
+                        
+            function normalChange(e) {
+                changeData($('#normal'), '#5e9ca8', e.value);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>motiv</h1>
+            <span class="custom-dropdown custom-dropdown--white" style="width: 42.5%;">
+                <select class="custom-dropdown__select custom-dropdown__select--white" style="background-color: rgba(0, 0, 0, 0.3)" onchange="rebelChange(this)">
+                    <option value="2">Administration Committee</option>
+                    <option value="202">Backbench Business Committee</option>
+                    <option value="9">Business, Innovation and Skills Committee</option>
+                    <option value="15">Committees on Arms Export Controls</option>
+                    <option value="17">Communities and Local Government Committee</option>
+                    <option value="171">Consolidation Bills</option>
+                    <option value="23">Culture, Media and Sport Committee</option>
+                    <option value="24">Defence Committee</option>
+                    <option value="225">Draft Detention of Terrorist Suspects</option>
+                    <option value="174">Ecclesiastical Committee</option>
+                    <option value="203">Education Committee</option>
+                    <option value="50">Energy and Climate Change Committee</option>
+                    <option value="52">Environment, Food and Rural Affairs Committee</option>
+                    <option value="62">Environmental Audit Committee</option>
+                    <option value="69">European Scrutiny Committee</option>
+                    <option value="77">Finance and Services Committee</option>
+                    <option value="78">Foreign Affairs Committee</option>
+                    <option value="81">Health Committee</option>
+                    <option value="303">High Speed Rail</option>
+                    <option value="83">Home Affairs Committee</option>
+                    <option value="311">House of Commons Governance Committee</option>
+                    <option value="93">Human Rights</option>
+                    <option value="97">Intelligence and Security</option>
+                    <option value="98">International Development Committee</option>
+                    <option value="196">Joint Committee on Security</option>
+                    <option value="102">Justice Committee</option>
+                    <option value="103">Liaison Committee</option>
+                    <option value="251">Members' Expenses Committee</option>
+                    <option value="111">National Security Strategy</option>
+                    <option value="120">Northern Ireland Affairs Committee</option>
+                    <option value="11">Panel of Chairs</option>
+                    <option value="99">Parliamentary Privilege</option>
+                    <option value="200">Political and Constitutional Reform Committee</option>
+                    <option value="289">Privileges Committee</option>
+                    <option value="126">Procedure Committee</option>
+                    <option value="207">Public Accounts Commission</option>
+                    <option value="127">Public Accounts Committee</option>
+                    <option value="128">Public Administration Committee</option>
+                    <option value="131">Regulatory Reform</option>
+                    <option value="135">Science and Technology Committee</option>
+                    <option value="136">Scottish Affairs Committee</option>
+                    <option value="137">Selection Committee</option>
+                    <option value="301">Speaker's Advisory Committee on Works of Art</option>
+                    <option value="144">Speaker's Committee on the Electoral Commission</option>
+                    <option value="290">Standards Committee</option>
+                    <option value="149">Statutory Instruments</option>
+                    <option value="153">Transport Committee</option>
+                    <option value="158">Treasury Committee</option>
+                    <option value="162">Welsh Affairs Committee</option>
+                    <option value="164">Work and Pensions Committee</option>
+                </select>
+            </span>
+            <span class="custom-dropdown custom-dropdown--white" style="float: right; width: 42.5%;">
+                <select class="custom-dropdown__select custom-dropdown__select--white" style="background-color: rgba(0,0, 0, 0.2)" onchange="normalChange(this)">
+                    <option value="2">Administration Committee</option>
+                    <option value="202">Backbench Business Committee</option>
+                    <option value="9">Business, Innovation and Skills Committee</option>
+                    <option value="15">Committees on Arms Export Controls</option>
+                    <option value="17">Communities and Local Government Committee</option>
+                    <option value="171">Consolidation Bills</option>
+                    <option value="23">Culture, Media and Sport Committee</option>
+                    <option value="24">Defence Committee</option>
+                    <option value="225">Draft Detention of Terrorist Suspects</option>
+                    <option value="174">Ecclesiastical Committee</option>
+                    <option value="203">Education Committee</option>
+                    <option value="50">Energy and Climate Change Committee</option>
+                    <option value="52">Environment, Food and Rural Affairs Committee</option>
+                    <option value="62">Environmental Audit Committee</option>
+                    <option value="69">European Scrutiny Committee</option>
+                    <option value="77">Finance and Services Committee</option>
+                    <option value="78">Foreign Affairs Committee</option>
+                    <option value="81">Health Committee</option>
+                    <option value="303">High Speed Rail</option>
+                    <option value="83">Home Affairs Committee</option>
+                    <option value="311">House of Commons Governance Committee</option>
+                    <option value="93">Human Rights</option>
+                    <option value="97">Intelligence and Security</option>
+                    <option value="98">International Development Committee</option>
+                    <option value="196">Joint Committee on Security</option>
+                    <option value="102">Justice Committee</option>
+                    <option value="103">Liaison Committee</option>
+                    <option value="251">Members' Expenses Committee</option>
+                    <option value="111">National Security Strategy</option>
+                    <option value="120">Northern Ireland Affairs Committee</option>
+                    <option value="11">Panel of Chairs</option>
+                    <option value="99">Parliamentary Privilege</option>
+                    <option value="200">Political and Constitutional Reform Committee</option>
+                    <option value="289">Privileges Committee</option>
+                    <option value="126">Procedure Committee</option>
+                    <option value="207">Public Accounts Commission</option>
+                    <option value="127">Public Accounts Committee</option>
+                    <option value="128">Public Administration Committee</option>
+                    <option value="131">Regulatory Reform</option>
+                    <option value="135">Science and Technology Committee</option>
+                    <option value="136">Scottish Affairs Committee</option>
+                    <option value="137">Selection Committee</option>
+                    <option value="301">Speaker's Advisory Committee on Works of Art</option>
+                    <option value="144">Speaker's Committee on the Electoral Commission</option>
+                    <option value="290">Standards Committee</option>
+                    <option value="149">Statutory Instruments</option>
+                    <option value="153">Transport Committee</option>
+                    <option value="158">Treasury Committee</option>
+                    <option value="162">Welsh Affairs Committee</option>
+                    <option value="164">Work and Pensions Committee</option>
+                </select>
+            </span>
+        </div>
+        <div class="cloud" id="rebels"></div>
+        <div class="cloud" id="normal"></div>
+    </body>
+</html>
